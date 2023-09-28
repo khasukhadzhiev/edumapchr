@@ -16,5 +16,6 @@ export const router = new VueRouter({
     { path: `${RouteEnum.college}`, name: "college", component: college },
     { path: `${RouteEnum.school}`, name: "school", component: school },
     { path: `${RouteEnum.university}`, name: "university", component: university },
+    { path: `${RouteEnum.slash}`, name: "school", component: school },
   ]
 });
