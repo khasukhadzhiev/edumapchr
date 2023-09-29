@@ -3,5 +3,8 @@ export const RouteEnum = {
     school: '/school',
     university: '/university',
     slash: '/',
-    notFound: '/*'
+    notFound: '/*',
+    chesu:'/university/chesu',
+    gstou:'/university/gstou',
+    chspu:'/university/chspu',
 };
