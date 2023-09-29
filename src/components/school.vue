@@ -1,10 +1,9 @@
 <template>
   <div class="school-content">
     <yandex-map class="map-conteiner-style" 
-    showAllMarkers=true
     :settings="settings" 
     :coords="[43.318368, 45.692419]" 
-    zoom="9" 
+    zoom="9"
     :options="mapOptions" 
     :controls="[]">
       <ymap-marker 
@@ -84,7 +83,7 @@ export default {
         <div class="row">
           <div class="col-md-4">
             <div class="image-container">
-              <img src="../../assets/mon.png" alt="Изображение 1" class="img-fluid">
+              <img src="mon.png" alt="Изображение 1" class="img-fluid">
               <img src="mon.png" alt="Изображение 2" class="img-fluid">
               <img src="mon.png" alt="Изображение 3" class="img-fluid">
             </div>
