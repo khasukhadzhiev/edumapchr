@@ -1,26 +1,13 @@
 <template>
   <div class="school-content">
-    <yandex-map class="map-conteiner-style" 
-    :settings="settings" 
-    :coords="[43.318368, 45.692419]" 
-    zoom="9"
-    :options="mapOptions" 
-    :controls="[]">
-      <ymap-marker 
-      v-for="(district, index) in districtList" 
-      marker-type="Polygon" 
-      :coords="district.geometry.coordinates"
-      :marker-id="'marker-id'+index" 
-      :options="districtOptions"
-      :hintContent="district.fullname"
-      :key="index"></ymap-marker>
-      
-      <ymap-marker v-for="(school, index) in schoolList" 
-      :balloon-template="mapInfoCard(school)"
-      :coords="school.coords.split(',')" 
-      :icon="{ content: school.name }" 
-      :key="index" 
-      :marker-id="index"></ymap-marker>
+    <yandex-map class="map-conteiner-style" :settings="settings" :coords="[43.318368, 45.692419]" zoom="9"
+      :options="mapOptions" :controls="[]">
+      <ymap-marker v-for="(district, index) in districtList" marker-type="Polygon" :coords="district.geometry.coordinates"
+        :marker-id="'marker-id' + index" :options="districtOptions" :hintContent="district.fullname"
+        :key="index"></ymap-marker>
+
+      <ymap-marker v-for="(school, index) in schoolList" :balloon-template="mapInfoCard(school)"
+        :coords="school.coords.split(',')" :icon="{ content: school.name }" :key="index" :marker-id="index"></ymap-marker>
     </yandex-map>
   </div>
 </template>
@@ -41,19 +28,19 @@ export default {
         enterprise: false,
         version: '2.1',
       },
-      mapOptions:{
-        maxZoom:10,
-        minZoom:9,
-        restrictMapArea:true,
-        hasHint:true
+      mapOptions: {
+        maxZoom: 10,
+        minZoom: 9,
+        restrictMapArea: true,
+        hasHint: true
       },
       districtList: districtList,
-      districtOptions:{
+      districtOptions: {
         fillOpacity: 0.2,
-        hasHint:true,
-        fill:true,
-        fillColor:"#007bff",
-        openHintOnHover:true
+        hasHint: true,
+        fill: true,
+        fillColor: "#007bff",
+        openHintOnHover: true
       },
       schoolList: [{
         id: 1,
@@ -68,6 +55,7 @@ export default {
         schoolBecame: "Школа внедрила современные технологии в образовательный процесс, предоставив доступ к компьютерным классам. Культурные искусства, такие как хор, театральная студия и художественный кружок, стали неотъемлемой частью жизни школы. Педагогический состав обновился, с привлечением новых учителей и применением современных методик обучения.",
         information: "Школа №1 стала современным образовательным центром, где современные методы обучения и культурные инициативы сделали обучение более интересным и эффективным для учащихся.",
         coords: "43.318366, 45.692421",
+        imgPath:"@/assets/sosh1.jpg"
       }]
     };
   },
@@ -80,27 +68,23 @@ export default {
   methods: {
     mapInfoCard: function (school) {
       return `
-        <div class="row">
-          <div class="col-md-4">
-            <div class="image-container">
-              <img src="mon.png" alt="Изображение 1" class="img-fluid">
-              <img src="mon.png" alt="Изображение 2" class="img-fluid">
-              <img src="mon.png" alt="Изображение 3" class="img-fluid">
+        <div class="baloon-content">
+            <div class="school-image-list">
+                <div class="image-container">
+                    <img src="${school.imgPath}" alt="Изображение 1" class="img-fluid">
+                </div>
             </div>
-          </div>
-          <div class="col-md-8">
             <div class="school-info">
-              <h6>Наименование</h6>
-              <p>${school.fullName}</p>
-              <h6>Адрес</h6>
-              <p>${school.address}</p>
-              <h6>Начало изменений</h6>
-              <p>${school.schoolWas}</p>
-              <h6>Школа сегодня</h6>
-              <p>${school.schoolBecame}</p>
-              <p>${school.information}</p>
+                <h6>Наименование</h6>
+                <p>${school.fullName}</p>
+                <h6>Адрес</h6>
+                <p>${school.address}</p>
+                <h6>Начало изменений</h6>
+                <p>${school.schoolWas}</p>
+                <h6>Школа сегодня</h6>
+                <p>${school.schoolBecame}</p>
+                <p>${school.information}</p>
             </div>
-          </div>
         </div>
       `;
     }
@@ -122,28 +106,14 @@ export default {
   display: none;
 }
 
-.row {
-  background-color: #fff;
-  /* Фоновый цвет контейнера */
-  padding: 10px;
-  /* Внутренний отступ для контейнера */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  /* Тень для контейнера */
-  border-radius: 8px;
-  /* Скругленные углы */
-}
-
 .image-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  display: block;
+  min-height: 100px;
 }
 
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  /* Скругленные углы изображений */
+.school-info {
+  display: block;
+  text-align: justify;
 }
 
 h6 {
@@ -172,7 +142,7 @@ h6::before {
   border-radius: 2px;
 }
 
-.district-hover{
+.district-hover {
   background-color: #00c853;
 }
 </style>
