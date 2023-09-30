@@ -14,7 +14,8 @@
   
 <script>
 import { yandexMap } from 'vue-yandex-maps'
-import districtList from '../assets/geojson/districtList.json'
+import districtList from '../assets/geojson/districtListmin.json'
+import schoolList from '../assets/geojson/schoolList.json'
 
 export default {
   components: { yandexMap },
@@ -35,6 +36,7 @@ export default {
         hasHint: true
       },
       districtList: districtList,
+      schoolList:schoolList,
       districtOptions: {
         fillOpacity: 0.2,
         hasHint: true,
@@ -42,21 +44,6 @@ export default {
         fillColor: "#007bff",
         openHintOnHover: true
       },
-      schoolList: [{
-        id: 1,
-        districtName: "Грозный",
-        name: "СОШ №1",
-        fullName: "СОШ №1",
-        yearFoundation: 1990,
-        levelEducation: "Общее образование",
-        address: "Грозный, б-р. С. Дудаева",
-        city: "Грозный",
-        schoolWas: "Учебный процесс был традиционным и не использующим современные технологии. Культурные и художественные инициативы не занимали центрального места. Учительский состав оставался без существенных изменений.",
-        schoolBecame: "Школа внедрила современные технологии в образовательный процесс, предоставив доступ к компьютерным классам. Культурные искусства, такие как хор, театральная студия и художественный кружок, стали неотъемлемой частью жизни школы. Педагогический состав обновился, с привлечением новых учителей и применением современных методик обучения.",
-        information: "Школа №1 стала современным образовательным центром, где современные методы обучения и культурные инициативы сделали обучение более интересным и эффективным для учащихся.",
-        coords: "43.318366, 45.692421",
-        imgPath:"@/assets/sosh1.jpg"
-      }]
     };
   },
   computed: {
@@ -75,15 +62,28 @@ export default {
                 </div>
             </div>
             <div class="school-info">
-                <h6>Наименование</h6>
+              <h6>Полное наименование</h6>
                 <p>${school.fullName}</p>
-                <h6>Адрес</h6>
-                <p>${school.address}</p>
-                <h6>Начало изменений</h6>
-                <p>${school.schoolWas}</p>
-                <h6>Школа сегодня</h6>
-                <p>${school.schoolBecame}</p>
-                <p>${school.information}</p>
+              <h6>Краткое наименование</h6>
+                <p>${school.name}</p>
+              <h6>Дата создания ОУ</h6>
+                <p>${school.createDate}</p>
+              <h6>Дата государственной регистрации</h6>
+                <p>${school.dateRegistration}</p>
+              <h6>Уровни образования</h6>
+                <p>${school.levelEducation}</p>
+              <h6>Форма обучения</h6>
+                <p>${school.educationForm}</p>
+              <h6>Нормативный срок обучения</h6>
+                <p>${school.educationPeriod}</p>
+              <h6>Языки, на которых осуществляется обучение</h6>
+                <p>${school.educationLanguage}</p>
+              <h6>Юридический адрес</h6>
+                <p>${school.legalAdress}</p>
+              <h6>Полный фактический адрес</h6>
+                <p>${school.factAdress}</p>
+              <h6>Адрес официального сайта</h6>
+                <p><a href="${school.sait}">${school.sait}</a></p>
             </div>
         </div>
       `;
