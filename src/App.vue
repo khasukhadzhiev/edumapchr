@@ -3,7 +3,7 @@
 
       <div class="content">
         <div class="logo">
-          <img src="./assets/mon.png" height="90" alt="" loading="lazy" />
+          <router-link :to="routeEnum.school"><img src="./assets/mon.png" height="90" alt="Главная" loading="lazy" /></router-link>
         </div>
         <div>
           <span class="header-text">ИНТЕРАКТИВНАЯ КАРТА ОБРАЗОВАТЕЛЬНЫХ УЧРЕЖДЕНИЙ ЧЕЧЕНСКОЙ РЕСПУБЛИКИ</span>

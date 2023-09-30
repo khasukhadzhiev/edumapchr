@@ -56,11 +56,6 @@ export default {
     mapInfoCard: function (school) {
       return `
         <div class="baloon-content">
-            <div class="school-image-list">
-                <div class="image-container">
-                    <img src="${school.imgPath}" alt="Изображение 1" class="img-fluid">
-                </div>
-            </div>
             <div class="school-info">
               <h6>Полное наименование</h6>
                 <p>${school.fullName}</p>
