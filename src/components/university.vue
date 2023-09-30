@@ -135,7 +135,8 @@ export default {
 };
 </script>
   
-<style>.row {
+<style scoped>
+.row {
   margin: 20px;
 }
 
@@ -144,6 +145,10 @@ export default {
   margin-left: 5px;
   margin-right: 5px;
   transition: 0.2s;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #007bff, #00c853);
+  border: 2px solid linear-gradient(90deg, #007bff, #00c853);
+  border-image-slice: 1;
 }
 .col:hover {
   background-color: #b5b5b51f;

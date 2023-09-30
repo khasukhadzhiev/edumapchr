@@ -131,10 +131,10 @@ p {
 }
 
 /* Добавим градиентный фон для заголовков */
-h6::before {
+h6::after {
   content: "";
   display: block;
-  width: 50px;
+  width: 20%;
   height: 4px;
   background: linear-gradient(90deg, #007bff, #00c853);
   /* Градиентный фон */

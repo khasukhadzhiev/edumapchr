@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,6 +50,10 @@ export default {
   align-items: center;
   background-color: #c1d6eb35;
   background-color: #F0F1F5; /* Задайте цвет текста по вашему усмотрению */
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(90deg, #007bff, #00c853);
+  border-bottom: 5px solid linear-gradient(90deg, #007bff, #00c853);
+  border-image-slice: 1;
 }
 
 /* Стили для логотипа */
