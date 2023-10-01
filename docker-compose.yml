@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  edumapchr_webui:
+    image: image_edumapchr_webui
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: container_edumapchr_webui
+    ports:
+      - "4545:4545"
