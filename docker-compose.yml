@@ -8,4 +8,4 @@ services:
       dockerfile: Dockerfile
     container_name: container_edumapchr_webui
     ports:
-      - "4545:4545"
+      - "8080:80"
